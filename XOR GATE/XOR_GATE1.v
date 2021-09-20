@@ -1,8 +1,9 @@
-module XOR (output  c, d, e, f, input a, b);
+module XOR_GATE (output  c, d, e, f, input a, b);
+
 
 or  (c, a,b);
-not (d,   a);
-and (e, a,b);
-xor (f, a,b);
+and (d, a,b);
+not (e,   a);
+xor (f, e,c);
 
 endmodule
