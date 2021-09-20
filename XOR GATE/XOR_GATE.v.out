@@ -1,0 +1,34 @@
+#! /mingw64/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1148-gef01dd1e)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\msys64\mingw64\lib\ivl\system.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\va_math.vpi";
+S_000001bb467c2830 .scope module, "XOR_GATE" "XOR_GATE" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "c";
+    .port_info 1 /OUTPUT 1 "d";
+    .port_info 2 /OUTPUT 1 "e";
+    .port_info 3 /OUTPUT 1 "f";
+    .port_info 4 /INPUT 1 "a";
+    .port_info 5 /INPUT 1 "b";
+o000001bb467f6fa8 .functor BUFZ 1, C4<z>; HiZ drive
+o000001bb467f6fd8 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001bb467c2ba0 .functor OR 1, o000001bb467f6fa8, o000001bb467f6fd8, C4<0>, C4<0>;
+L_000001bb467c3220 .functor NOT 1, o000001bb467f6fa8, C4<0>, C4<0>, C4<0>;
+L_000001bb467ae500 .functor AND 1, o000001bb467f6fa8, o000001bb467f6fd8, C4<1>, C4<1>;
+L_000001bb467ae570 .functor XOR 1, o000001bb467f6fa8, o000001bb467f6fd8, C4<0>, C4<0>;
+v000001bb467c2de0_0 .net "a", 0 0, o000001bb467f6fa8;  0 drivers
+v000001bb467c29c0_0 .net "b", 0 0, o000001bb467f6fd8;  0 drivers
+v000001bb467c2a60_0 .net "c", 0 0, L_000001bb467c2ba0;  1 drivers
+v000001bb467c2b00_0 .net "d", 0 0, L_000001bb467c3220;  1 drivers
+v000001bb467ae3c0_0 .net "e", 0 0, L_000001bb467ae500;  1 drivers
+v000001bb467ae460_0 .net "f", 0 0, L_000001bb467ae570;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "XOR_GATE.v";
